@@ -1,8 +1,18 @@
 @charset "utf-8";
 /* common start */
-.demo_mask {  background-color: #000000;top: 0;right: 0;bottom: 0;left: 0;opacity: 0.5;filter: Alpha(opacity=50);position: fixed;z-index: 100000000;}
-.demo_mask.hide {
-    display: none;
+.demo_mask {  background-color: #000000;top: 0;right: 0;bottom: 0;left: 0;position: fixed;z-index: 100000000;}
+.demo_mask.fade {
+  opacity: 0;
+  filter: Alpha(opacity=0);
+  -webkit-transition: opacity 0.15s linear;
+     -moz-transition: opacity 0.15s linear;
+      -ms-transition: opacity 0.15s linear;
+       -o-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear;
+}
+.demo_mask.fade.in {
+	opacity: 0.7;
+	filter: Alpha(opacity=70);
 }
 .demo_modal {
     background-clip: padding-box;
@@ -27,7 +37,7 @@
 .demo_modal.fade {
   top: -25%;
   -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
-     -moz-transition: opacity 0.3s linear 0s, top 0.3s ease-out 0s;
+     -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
       -ms-transition: opacity 0.3s linear, top 0.3s ease-out;
        -o-transition: opacity 0.3s linear, top 0.3s ease-out;
           transition: opacity 0.3s linear, top 0.3s ease-out;

@@ -1,6 +1,6 @@
 (function(){
 	var tagprefix = 'demo_';
-	var shareurl = 'http://www.baidu.com?url=';
+	var shareurl = 'http://www.baidu.com/s?wd=';
 	var stylecss = 'http://127.0.0.1/~admin/collectjs/css/collect.css';
 	var dialogtitle = 'Share';
 	var dialogwidth = '720';
@@ -19,11 +19,15 @@
 		var p = astyle.parentNode;
 		var dialogmask = document.getElementById(tagprefix + "mask");
 		var dialoghandle = document.getElementById(tagprefix + "sharebox");
-		dialoghandle.style.display="none";
-		dialogmask.className = tagprefix+'mask hide';
-		//p.removeChild(dialogmask);
-		//p.removeChild(dialoghandle);
-		//p.removeChild(astyle);
+		dialoghandle.className = tagprefix+'modal fade';
+		dialogmask.className = tagprefix+'mask fade';
+		setTimeout(function(){
+			//dialoghandle.style.display="none";
+			//dialogmask.style.display="none";
+			p.removeChild(dialoghandle);
+			p.removeChild(dialogmask);
+			p.removeChild(astyle);
+		},200);
 		return false;
 	};
 	var validateUrl = function(url) {
@@ -48,7 +52,8 @@
 			bm ? document.getElementsByTagName("head")[0].appendChild(styledom): document.body.appendChild(styledom);
 		}
 		dialogmask = getElement("mask")?getElement("mask"):createElement("mask");;
-		dialogmask.className = tagprefix+"mask";
+		dialogmask.className = tagprefix+"mask fade";
+		dialogmask.style.display="none";
 		dialogmask.onclick = closeDialog;
 		document.body.appendChild(dialogmask);
 		dialoghandle = getElement("sharebox")?getElement("sharebox"):createElement("sharebox");
@@ -59,9 +64,11 @@
 		dialoghandle.innerHTML = content;
 		document.body.appendChild(dialoghandle);
 		setTimeout(function(){
+			dialogmask.style.display="";
 			dialoghandle.style.display="block";
 			setTimeout(function(){
 				dialoghandle.className = tagprefix+'modal fade in';
+				dialogmask.className = tagprefix+"mask fade in";
 			},200);
 		},100);
 	};
