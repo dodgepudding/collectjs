@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>share page</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.container:after {
+    clear: both;
+}
+.sharebtn {
+	background-color: #006DCC;
+    background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -moz-transition: none 0s ease 0s;
+    border: 0 none;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 200;
+    padding: 19px 24px;
+    text-decoration: none;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$('#sharescript').val($('#sharebtn').attr('href'));
+})
+</script>
+</head>
+<body>
+<div class="container">
+	<div align="center">
+	<h2>1. drag&drop button to bookmark</h2>
+	<p align="center">
+		<a id="sharebtn" title="share link" class="sharebtn" href="javascript:void(function(d,a,c,b){a[c]&&typeof a[c].fetchShare=='function'?a[c].fetchShare():(b=a.createElement('script'),b.id=c+'script',b.setAttribute('charset','utf-8'),b.src='http://localhost/collectjs/collect.js?'+Math.floor(+new Date/1E7),a.body.appendChild(b))}(window,document,'demo_'));">Share link</a>
+	</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<h2>2. copy text below to make a new bookmark</h2>
+	<p align="center">
+	<textarea rows="4" cols="80" id="sharescript"></textarea>
+	</p>
+	</div>
+</div>
+</body>
+</html>
