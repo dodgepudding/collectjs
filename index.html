@@ -44,13 +44,15 @@ $(function(){
 <body>
 <div class="container">
 	<div align="center">
-	<h2>1. drag&drop button to bookmark</h2>
+	<h2>书签栏Javascript工具框架</h2>
+	<hr/>
+	<h3>1. 将下面按钮拖放入书签栏</h3>
 	<p align="center">
-		<a id="sharebtn" title="share link" class="sharebtn" href="javascript:void(function(d,a,c,b){a[c]&&typeof a[c].fetchShare=='function'?a[c].fetchShare():(b=a.createElement('script'),b.id=c+'script',b.setAttribute('charset','utf-8'),b.src='http://localhost/collectjs/collect.js?'+Math.floor(+new Date/1E7),a.body.appendChild(b))}(window,document,'demo_'));">Share link</a>
+		<a id="sharebtn" title="share link" class="sharebtn" href="javascript:void(function(d,a,c,b){a[c]&&typeof a[c].fetchShare=='function'?a[c].fetchShare():(b=a.createElement('script'),b.id=c+'script',b.setAttribute('charset','utf-8'),b.src='http://127.0.0.1/~admin/collectjs/collect.js?'+Math.floor(+new Date/1E7),a.body.appendChild(b))}(window,document,'demo_'));">Share link</a>
 	</p>
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
-	<h2>2. copy text below to make a new bookmark</h2>
+	<h3>2. 在收藏夹中新建自定义书签并粘贴以下内容</h3>
 	<p align="center">
 	<textarea rows="4" cols="80" id="sharescript"></textarea>
 	</p>
